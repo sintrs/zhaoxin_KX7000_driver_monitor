@@ -52,5 +52,5 @@
 ## 注意事项
 
 - `SERVERCHAN_KEY` 存储在 GitHub Secrets 中，不会泄露
-- 免费版 Server 酱每日限 20 条推送，驱动更新频率低，足够使用
+- 免费版 Server 酱每日限 5 条推送，驱动更新频率低，足够使用
 - 如需更及时通知，可修改 `.github/workflows/monitor.yml` 中的 cron 表达式
