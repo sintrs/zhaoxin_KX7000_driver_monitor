@@ -153,11 +153,9 @@ def check():
 """
 
     # 控制台输出
-    print(f"
-{'='*55}")
+    print(f"{'='*55}")
     print(content)
-    print(f"{'='*55}
-")
+    print(f"{'='*55}")
 
     # 推送到微信
     send_serverchan(title, content)
