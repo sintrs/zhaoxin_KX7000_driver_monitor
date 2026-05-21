@@ -1,27 +1,23 @@
-name: monitor
+name: zhaoxin-monitor
 
 on:
   schedule:
-    - cron: '55 0,3,5,7 * * *'  # 每天 0:55、3:55、5:55、7:55 运行（北京时间 8:55、11:55、13:55、15:55）
-  workflow_dispatch:        # 允许手动触发
+    - cron: '55 0,3,5,7 * * *'
+  workflow_dispatch:
 
 jobs:
   check:
     runs-on: ubuntu-latest
-
     steps:
-      - name: 检出代码
+      - name: checkout
         uses: actions/checkout@v4
-
-      - name: 设置 Python
+      - name: setup-python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
-      - name: 安装依赖
+      - name: install-deps
         run: pip install requests beautifulsoup4
-
-      - name: 运行监控
+      - name: run-monitor
         env:
           SERVERCHAN_KEY: ${{ secrets.SERVERCHAN_KEY }}
         run: python zhaoxin_monitor.py
