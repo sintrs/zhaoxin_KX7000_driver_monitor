@@ -1,0 +1,23 @@
+name: zhaoxin-monitor
+
+on:
+  workflow_dispatch:
+  schedule:
+     - cron: '*/5 */4 * * *'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: setup-python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: install-deps
+        run: pip install requests beautifulsoup4
+      - name: run-monitor
+        env:
+          SERVERCHAN_KEY: ${{ secrets.SERVERCHAN_KEY }}
+        run: python zhaoxin_monitor.py
