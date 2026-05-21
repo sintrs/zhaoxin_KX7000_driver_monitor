@@ -1,4 +1,4 @@
-name: 兆芯驱动监控
+name: monitor
 
 on:
   schedule:
