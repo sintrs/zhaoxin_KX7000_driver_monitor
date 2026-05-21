@@ -2,7 +2,7 @@ name: 兆芯驱动监控
 
 on:
   schedule:
-    - cron: '30 0,12 * * *'  # 每12小时运行一次（00:00 和 12:00 UTC）
+    - cron: '55 0,3,5,7 * * *'  # 每12小时运行一次（00:00 和 12:00 UTC）
   workflow_dispatch:        # 允许手动触发
 
 jobs:
