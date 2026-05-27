@@ -22,7 +22,7 @@ PREFIX = "KX-7000-Linux OS_x64"
 
 # 内置固定版本号（当前已知的版本）
 # 当推送通知后，手动更新此版本号并提交到仓库
-BASELINE_VERSION = "26.00.48"
+BASELINE_VERSION = "26.00.49"
 
 # Server 酱配置（从环境变量读取，GitHub Secrets 注入）
 SERVERCHAN_KEY = os.getenv("SERVERCHAN_KEY", "")
